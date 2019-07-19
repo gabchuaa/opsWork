@@ -1,8 +1,8 @@
 package dao;
 
-import pojo.UserAccount;
+import pojo.User;
 
 public interface LoginDAO {
-	boolean loginValidate(UserAccount ref);
+	boolean loginValidate(User ref);
 	
 }
