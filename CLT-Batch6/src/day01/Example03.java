@@ -8,6 +8,10 @@ class StaticNonStaticDemo{
 		System.out.println(variable1+"\n"+variable2);//no need to create object
 		//call variable 1 and variable 2
 	}
+	
+	public int returnSt () {
+		return variable1;
+	}
  // end of showVariable
 
 static String reference1 = "AAAAA";
@@ -29,6 +33,7 @@ public class Example03 {
 	public static void main(String []args) {
 		new StaticNonStaticDemo().showVariable();
 		StaticNonStaticDemo.showReferences();
+		System.out.println(new StaticNonStaticDemo().returnSt());
 	}// end of psvm
 	
 	
