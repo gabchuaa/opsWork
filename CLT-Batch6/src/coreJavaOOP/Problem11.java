@@ -4,42 +4,46 @@ import java.util.Arrays;
 
 public class Problem11 {
 	
-	public static int removedupe(int arr[], int n) {
-		if (n==0 || n==1) {
-			return n;
-		}
-		
-		int temp []= new int [n];
-		int j = 0;
-		for (int i = 0; i<n-1;i++) {
-			if(arr[i] != arr[i+1]) {
-				temp[j++] = arr[i];
-			}
-		}
-		temp [j++]=arr[n-1];
-		
-		for(int i=0;i<j;i++) {
-			arr[i] = temp[i];
-		}
-		return j;
-	}
-
-	public static void main(String []args) {
-		int arr[] = {1,2,3,1,2,3,4};
-		Arrays.sort(arr);
-		int length = arr.length;
-		length = removedupe(arr,length);
-		//print array
-		for(int i =0; i<length;i++) {
-			if(arr[i] ==4 ) {
+	static void toPrint() {
+		int arr[] = {1,2,3,1,2,3,4}; //step 1 : create array 
+		Arrays.sort(arr);////step 2: sort array
+		int length = arr.length;//step 3: set int length to the array length
+		Problem11.removeDupeElement(arr,length);//step 4: call removeDupeElement
+		for(int i =0;i<length;i++) { 
+			if (arr[i]==4) {
 				System.out.print(arr[i]);
-			} else {
-				System.out.print(arr[i]+", ");
+				break;
 			}
-			}
-		}
+			System.out.print(arr[i]+",");
+			
 		
-	}
+		}
+}
+	
+	static int removeDupeElement(int arr[],int n) {//step 5
+		  int replaceIndex = 0;
+	        int i,j;
+	        for(i=0; i<n; i++){ //step 6: loop i<n
+	            for(j=i+1; j<n; j++){//step 7: at the same time start a j loop which start at a value ahead of i
+	                if(arr[j]!=arr[i]){//step8: if array value is different from i and j it will go skip array and go to the next step
+	                    break;
+	                }
+	            }
+	            
+	            arr[replaceIndex++] = arr[i];// arr[i] is copied to arr[replaceIndex]
+	            i = j-1; // to avoid scanning duplicate element
+	            
+	        }
+	       
+	        return replaceIndex;
+	    }
+		
+	
+	
+public static void main(String []args) {
+	toPrint();
+}
+}
 
 	
 	
