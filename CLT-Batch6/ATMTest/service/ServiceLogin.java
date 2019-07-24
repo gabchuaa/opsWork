@@ -1,9 +1,10 @@
 package service;
 
-import pojo.UserAccount;
+import pojo1.UserAccount;
 
 public interface ServiceLogin {
 	
-	public void checkStatus(UserAccount ref);
+	public void verifyLogin(UserAccount ref);
+	public void verifyRegisteredEmail(UserAccount ref);
 
 }
