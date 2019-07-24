@@ -1,9 +1,10 @@
 package dao;
 
-import pojo.UserAccount;
+import pojo1.UserAccount;
 
 public interface Authentication {
 
 	public boolean checkLogin(UserAccount ref);
+
 	
 }
