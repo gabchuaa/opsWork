@@ -1,6 +1,6 @@
 package dao;
 
-import pojo1.UserAccount;
+import pojo.UserAccount;
 
 public interface Authentication {
 

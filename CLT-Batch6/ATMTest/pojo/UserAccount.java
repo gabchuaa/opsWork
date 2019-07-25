@@ -1,4 +1,4 @@
-package pojo1;
+package pojo;
 
 public class UserAccount {
 	
@@ -40,4 +40,12 @@ public class UserAccount {
 	public void setUserBalance(int userBalance) {
 		this.userBalance = userBalance;
 	}
+	
+	public void setDepositAmount(int userBalance) {
+		this.userBalance += userBalance;
+	}
+	public void setWithdrawAmount(int userBalance) {
+		this.userBalance -= userBalance;
+	}
+	
 }
