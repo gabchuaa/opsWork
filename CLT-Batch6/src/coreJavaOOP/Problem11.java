@@ -18,7 +18,7 @@ public class Problem11 {
 			
 		
 		}
-}
+	}//end of toPrint
 	
 	static int removeDupeElement(int arr[],int n) {//step 5
 		  int replaceIndex = 0;
@@ -36,7 +36,7 @@ public class Problem11 {
 	        }
 	       
 	        return replaceIndex;
-	    }
+	    }//end of removeDupeElement
 		
 	
 	

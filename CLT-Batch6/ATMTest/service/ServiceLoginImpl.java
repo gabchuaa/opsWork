@@ -38,15 +38,14 @@ public class ServiceLoginImpl implements ServiceLogin  {
 				} else {
 					System.out.println("Password doesn't match");
 				}
-			}
-			
+			}//end of while (exist)
 			LoginRequest refLoginRequest = new LoginRequest();
 			refLoginRequest.printHomePage();
 			
 				} else {
 					System.out.println("Information given is wrong");
 				}
-	}
+	}//end of verifySecurityKey
 	
 	@Override 
 	public void verifyLogin(UserAccount userInfo) {//get reference from UserAccount // to use in printLogin method to verify login
@@ -201,7 +200,6 @@ public class ServiceLoginImpl implements ServiceLogin  {
 		String password = sc.next();
 		String password1;
 		while(!exist1 ){
-
 			System.out.println("Re-type Password : ");
 			password1 = sc.next();
 			if(password .equals(password1)){
@@ -214,7 +212,6 @@ public class ServiceLoginImpl implements ServiceLogin  {
 				System.out.println();
 				System.out.println("Registration Successful!!");
 				System.out.println();
-				
 				exist1 = true;}//end of if statement
 			else {
 				System.out.println("Password doesn't match");

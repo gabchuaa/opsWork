@@ -11,7 +11,7 @@ public class Problem8 {
 				for(int k = 0;k<(j-2);k++) {
 					System.out.print("*"+" ");
 				}
-				if(i==2) {
+				if(i==2) {// to hand the single spacing when row ==2
 					System.out.print("\n*");
 				}
 				
