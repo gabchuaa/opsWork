@@ -1,7 +1,9 @@
-/corejava/
-/controller/
 /application/
-/service/
-/day09/
+/controller/
 /dao/
+/day09/
+/factory/
+/packA/
+/packB/
 /pojo/
+/service/
