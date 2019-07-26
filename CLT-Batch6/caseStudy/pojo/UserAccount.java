@@ -41,11 +41,5 @@ public class UserAccount {
 		this.userBalance = userBalance;
 	}
 	
-	public void setDepositAmount(int userBalance) {
-		this.userBalance += userBalance;
-	}
-	public void setWithdrawAmount(int userBalance) {
-		this.userBalance -= userBalance;
-	}
 	
 }

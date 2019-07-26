@@ -11,11 +11,11 @@ import pojo.UserAccount;
 public class ServiceLoginImpl implements ServiceLogin  {
 	Authentication refAuthentication;
 	Scanner sc = new Scanner(System.in);
-	AuthenticationImpl verifyAuth = new AuthenticationImpl();
+	Authentication verifyAuth = new AuthenticationImpl();
 	UserAccount userInfo = new UserAccount();
 	
 	public void verifySecurityKey(UserAccount userInfo) {
-		if(verifyAuth.verifySecurityKey(userInfo)==true) {
+		if(verifyAuth.toSecurityKey(userInfo)==true) {
 			boolean exist = false;
 			while (!exist) {
 				System.out.println("Enter new password");
@@ -125,7 +125,7 @@ public class ServiceLoginImpl implements ServiceLogin  {
 					break;
 				}
 			} 
-		userInfo.setDepositAmount(amount);;
+		toDeposit(amount);
 		System.out.println(amount+" dollar deposited successfully!!");
 		System.out.println("Wish to Continue? (y/n)");
 		String refInput = sc.next();
@@ -138,6 +138,17 @@ public class ServiceLoginImpl implements ServiceLogin  {
 		}
 	}//end of depositAmount
 		
+	public void toWithdraw(int amount) {
+		int amountAfterdeduction;
+		amountAfterdeduction = userInfo.getUserBalance()-amount;
+		userInfo.setUserBalance(amountAfterdeduction);
+	}//end of toWithdraw
+	
+	public void toDeposit(int amount) {
+		int amountAfterDeposit;
+		amountAfterDeposit = userInfo.getUserBalance()+amount;
+		userInfo.setUserBalance(amountAfterDeposit);
+	}// end of toDeposit
 	
 	
 	public void withdrawAmount(UserAccount userInfo) {// Method to withdraw money into UserAccount
@@ -161,7 +172,7 @@ public class ServiceLoginImpl implements ServiceLogin  {
 				}// end of  refInput if else statement
 			}
 			else {
-				userInfo.setWithdrawAmount(amount);
+				toWithdraw(amount);
 				System.out.println(" Transaction Successful");
 				System.out.println("Wish to Continue? (y/n)");
 				refInput = sc.next();
@@ -185,7 +196,8 @@ public class ServiceLoginImpl implements ServiceLogin  {
 		String userID = sc.next();
 		
 			while(!exist) {
-				if (userID.equals(userInfo.getUserEmail()) || userID.equals(verifyAuth.getDbUserID1())  ) {
+				verifyAuth = new AuthenticationImpl();
+				if (userID.equals(userInfo.getUserEmail()) || userID.equals("xyz@gmail.com"))   {
 					System.out.println("email address already exist");
 					System.out.print("Enter Email address : ");
 					userID = sc.next();
@@ -195,7 +207,6 @@ public class ServiceLoginImpl implements ServiceLogin  {
 				}
 		}// end of while for userID
 		userInfo.setUserEmail(userID);
-		System.out.println(userInfo.getUserEmail());
 		System.out.println("Enter Password : ");
 		String password = sc.next();
 		String password1;

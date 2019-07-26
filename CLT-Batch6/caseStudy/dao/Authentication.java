@@ -5,6 +5,8 @@ import pojo.UserAccount;
 public interface Authentication {
 
 	public boolean checkLogin(UserAccount ref);
+	public boolean toSecurityKey(UserAccount ref);
+	
 
 	
 }

@@ -13,7 +13,7 @@ public class LoginRequest  {
 	UserAccount userInfo = new UserAccount();
 	Scanner sc = new Scanner(System.in);
 	AuthenticationImpl verifyAuth = new AuthenticationImpl();
-	ServiceLoginImpl verifyService = new ServiceLoginImpl();
+	ServiceLogin verifyService = new ServiceLoginImpl();
 	
 	public void sendLoginRequest() {
 		printHomePage();

@@ -39,7 +39,7 @@ public class AuthenticationImpl implements Authentication  {
 		return status;
 	}// end of checkLogin
 	
-	public boolean verifySecurityKey(UserAccount ref) {
+	public boolean toSecurityKey(UserAccount ref) {
 		if(ref.getUserEmail().equals(dbUserID2) && ref.getSecurityKey().equals(dbSecurityKey2)) {
 			skStatus = true;
 		} else {
