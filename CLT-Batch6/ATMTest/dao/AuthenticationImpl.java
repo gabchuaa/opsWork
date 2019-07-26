@@ -46,7 +46,7 @@ public class AuthenticationImpl implements Authentication  {
 			skStatus = false;
 		}
 		return skStatus;
-	}
+	}//end of verifySecurityKey
 
 
 
