@@ -56,7 +56,7 @@ public class ArrayPractice02 {
 					if(choice1.equals("yes")) {
 						itr.remove();
 						System.out.println("Destination remove");
-						System.out.println("==========================");
+						System.out.println("================================");
 					}
 				} 
 				if(!itr.hasNext()) {
