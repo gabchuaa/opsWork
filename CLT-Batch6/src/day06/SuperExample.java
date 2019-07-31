@@ -9,7 +9,7 @@ class SubClass extends SuperClass{
 	final int number = 30;
 	
 	void accessNumber( int num) {
-		number = num; // we can't reassign the value
+		//number = num; // we can't reassign the value
 		System.out.println(this.number);// this means current class
 		System.out.println(super.number);
 	}// end of acccessNumber(
