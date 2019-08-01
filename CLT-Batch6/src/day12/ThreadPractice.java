@@ -56,7 +56,8 @@ public class ThreadPractice {
 		t3.setName("Rico-laaa");
 		t4.setName("M & M");
 		t5.setName("Tictac");
-		
+		t4.setPriority(10);
+		t1.setPriority(1);
 		t1.start();
 		t2.start();
 		try {
