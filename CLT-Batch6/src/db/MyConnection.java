@@ -22,6 +22,7 @@ public class MyConnection {
 		//open a Connection
 		Connection ref = DriverManager.getConnection(connectionURL,uname,pw1);
 		return ref;
+		
 	}
 	
 }
