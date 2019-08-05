@@ -2,6 +2,7 @@ package controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 import model.practiceUser;
@@ -50,6 +51,18 @@ public class PracticeController {
 		prefService.updatePerson(userRef);
 		
 		
+	}
+	
+	public List<practiceUser> listPerson(){
+		return prefService.listUser();
+	}
+	
+	public void askUserID() {
+		prefService.getPersonID(userRef);
+	}
+	
+	public void removeUserID() {
+		prefService.removePersionID(userRef);
 	}
 
 }

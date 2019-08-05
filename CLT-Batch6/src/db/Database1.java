@@ -9,7 +9,8 @@ public class Database1 {
 
 	public static void main(String []args) throws ClassNotFoundException,SQLException{
 		//Step 1
-		Connection con = MyConnection.prepareConnection();
+//		Connection con = MyConnection.prepareConnection();
+		Connection con = DBConnection2.myConnection();
 		
 		//Execute a query
 		//System.out.println("Creating table in given database....");
@@ -23,12 +24,13 @@ public class Database1 {
 		 */
 		
 		//insert record 
+		
 		/*
 		 * String sql = "INSERT INTO students "+
-		 * "VALUES (6874123, 'earme','earme@gmail.com')"; st.executeUpdate(sql);
-		 * 
+		 * "VALUES (687412312, 'earme','earme@gmail.com')"; st.executeUpdate(sql);
 		 * System.out.println("Data Inserted Successfully");
 		 */
+		 
 		 
 		
 		//delete a record
