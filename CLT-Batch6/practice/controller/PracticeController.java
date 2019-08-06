@@ -16,22 +16,28 @@ public class PracticeController {
 	
 	public void printOption() {
 		Scanner sc = new Scanner (System.in);
-		System.out.println("1.Register user \n2.Update user \n3.Show Registered User Info \n4.Show selected User Info \n5.Delete User");
-		int choice = sc.nextInt();
-		sc.nextLine();
+		boolean exist = true;
+		while(exist) {
 		try {
+			System.out.println("1.Register user \n2.Update user \n3.Show Registered User Info \n4.Show selected User Info \n5.Delete User");
+			int choice = sc.nextInt();
+			sc.nextLine();
 			switch (choice) {
 			case 1:
 				askUserInput();
+				exist = false;
 				break;
 			case 2:
 				askUserUpdateInput();
+				exist = false;
 				break;
 			case 3:
 				askListPerson();
+				exist = false;
 				break;
 			case 4:
 				askUserID();
+				exist = false;
 				break;
 			case 5:
 				removeUserID();
@@ -39,10 +45,17 @@ public class PracticeController {
 				default:
 					System.out.println("Wrong input");
 					printOption();
+					exist = false;
+					break;
 			} 
 		}catch(InputMismatchException e) {
 			System.out.println("Enter number only!!");
-		} 
+			printOption();
+			exist = false;
+			continue;
+			
+			
+		} }
 	}
 	
 	public void askUserInput() {
