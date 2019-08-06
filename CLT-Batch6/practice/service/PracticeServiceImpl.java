@@ -39,6 +39,7 @@ public class PracticeServiceImpl implements PracticeService {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter id");
 		String id = sc.next();
+		sc.nextLine();
 		pRefDao.getPersonById(id);
 		
 	}
@@ -49,6 +50,7 @@ public class PracticeServiceImpl implements PracticeService {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter id to remove");
 		String id = sc.next();
+		sc.nextLine();
 		pRefDao.removePerson(id);
 		
 	}
