@@ -1,19 +1,19 @@
 package controller;
 
-import dao.Authentication;
-import dao.AuthenticationImpl;
-import service.ServiceLogin;
-import service.ServiceLoginImpl;
+import dao.Authentication1;
+import dao.AuthenticationImpl1;
+import service.ServiceLogin1;
+import service.ServiceLoginImpl1;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import pojo.UserAccount;
+import pojo.UserAccount1;
 public class LoginRequest  {
 	
-	UserAccount userInfo = new UserAccount();
+	UserAccount1 userInfo = new UserAccount1();
 	Scanner sc = new Scanner(System.in);
-	AuthenticationImpl verifyAuth = new AuthenticationImpl();
-	ServiceLogin verifyService = new ServiceLoginImpl();
+	AuthenticationImpl1 verifyAuth = new AuthenticationImpl1();
+	ServiceLogin1 verifyService = new ServiceLoginImpl1();
 	
 	public void sendLoginRequest() {
 		printHomePage();

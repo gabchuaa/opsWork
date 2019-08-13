@@ -1,8 +1,8 @@
 package dao;
 
-import pojo.UserAccount;
+import pojo.UserAccount1;
 
-public class AuthenticationImpl implements Authentication  {
+public class AuthenticationImpl implements Authentication1  {
 
 	
 	boolean status;
@@ -28,7 +28,7 @@ public class AuthenticationImpl implements Authentication  {
 	}
 
 	@Override// To check login information from UserAccount
-	public boolean checkLogin(UserAccount ref) { //to validate if dbuserID match getUserEmail
+	public boolean checkLogin(UserAccount1 ref) { //to validate if dbuserID match getUserEmail
 		if((ref.getUserEmail().equals(dbUserID1)&& ref.getUserPassword().equals(dbUserPass1))
 			|| ref.getUserEmail().equals(dbUserID2) && ref.getUserPassword().equals(dbUserPass2)
 			){
@@ -39,7 +39,7 @@ public class AuthenticationImpl implements Authentication  {
 		return status;
 	}// end of checkLogin
 	
-	public boolean toSecurityKey(UserAccount ref) {
+	public boolean toSecurityKey(UserAccount1 ref) {
 		if(ref.getUserEmail().equals(dbUserID2) && ref.getSecurityKey().equals(dbSecurityKey2)) {
 			skStatus = true;
 		} else {

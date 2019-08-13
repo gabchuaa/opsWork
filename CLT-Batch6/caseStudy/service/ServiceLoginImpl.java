@@ -3,18 +3,18 @@ package service;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import controller.LoginRequest;
-import dao.Authentication;
-import dao.AuthenticationImpl;
-import pojo.UserAccount;
+import controller.LoginRequest1;
+import dao.Authentication1;
+import dao.AuthenticationImpl1;
+import pojo.UserAccount1;
 
-public class ServiceLoginImpl implements ServiceLogin  {
-	Authentication refAuthentication;
+public class ServiceLoginImpl implements ServiceLogin1  {
+	Authentication1 refAuthentication;
 	Scanner sc = new Scanner(System.in);
-	Authentication verifyAuth = new AuthenticationImpl();
-	UserAccount userInfo = new UserAccount();
+	Authentication1 verifyAuth = new AuthenticationImpl1();
+	UserAccount1 userInfo = new UserAccount1();
 	
-	public void verifySecurityKey(UserAccount userInfo) {
+	public void verifySecurityKey(UserAccount1 userInfo) {
 		if(verifyAuth.toSecurityKey(userInfo)==true) {
 			boolean exist = false;
 			while (!exist) {
@@ -39,7 +39,7 @@ public class ServiceLoginImpl implements ServiceLogin  {
 					System.out.println("Password doesn't match");
 				}
 			}//end of while (exist)
-			LoginRequest refLoginRequest = new LoginRequest();
+			LoginRequest1 refLoginRequest = new LoginRequest1();
 			refLoginRequest.printHomePage();
 			
 				} else {
@@ -48,7 +48,7 @@ public class ServiceLoginImpl implements ServiceLogin  {
 	}//end of verifySecurityKey
 	
 	@Override 
-	public void verifyLogin(UserAccount userInfo) {//get reference from UserAccount // to use in printLogin method to verify login
+	public void verifyLogin(UserAccount1 userInfo) {//get reference from UserAccount // to use in printLogin method to verify login
 		
 			if(verifyAuth.checkLogin(userInfo)==true) { // To check refAuthentication.checkLogin, base on the condition return
 				System.out.println("Login success");	  // it will print out the different output
@@ -99,7 +99,7 @@ public class ServiceLoginImpl implements ServiceLogin  {
 			}//end of while 
 		}//end of printAccountOptions
 	
-	public void checkBalance(UserAccount userInfo){ // method to check UserAccount Balance
+	public void checkBalance(UserAccount1 userInfo){ // method to check UserAccount Balance
 		System.out.println("Available Balance "+userInfo.getUserBalance());
 		System.out.println("Wish to Continue? (y/n)");
 		String refInput = sc.next();
@@ -107,14 +107,14 @@ public class ServiceLoginImpl implements ServiceLogin  {
 			printAccountOptions();
 		} else {
 			System.out.println("Thanks for Banking with Us!!!");
-			LoginRequest refLoginRequest = new LoginRequest();
+			LoginRequest1 refLoginRequest = new LoginRequest1();
 			refLoginRequest.printHomePage();
 			
 		}
 		
 	}//end of checkBalance
 	
-	public void depositAmount(UserAccount userInfo) { // Method to deposit money into UserAccount
+	public void depositAmount(UserAccount1 userInfo) { // Method to deposit money into UserAccount
 		System.out.println("Enter amount : ");
 		int amount = sc.nextInt();
 		while(amount<0) {
@@ -133,7 +133,7 @@ public class ServiceLoginImpl implements ServiceLogin  {
 			printAccountOptions();
 		} else {
 			System.out.println("Thanks for Banking with Us!!!");
-			LoginRequest refLoginRequest = new LoginRequest();
+			LoginRequest1 refLoginRequest = new LoginRequest1();
 			refLoginRequest.printHomePage();
 		}
 	}//end of depositAmount
@@ -151,7 +151,7 @@ public class ServiceLoginImpl implements ServiceLogin  {
 	}// end of toDeposit
 	
 	
-	public void withdrawAmount(UserAccount userInfo) {// Method to withdraw money into UserAccount
+	public void withdrawAmount(UserAccount1 userInfo) {// Method to withdraw money into UserAccount
 		String refInput;
 		boolean invalidAmount = true;
 		while(invalidAmount) {
@@ -166,7 +166,7 @@ public class ServiceLoginImpl implements ServiceLogin  {
 					invalidAmount = false;
 				} else {
 					System.out.println("Thanks for Banking with Us!!!");
-					LoginRequest refLoginRequest = new LoginRequest();
+					LoginRequest1 refLoginRequest = new LoginRequest1();
 					refLoginRequest.printHomePage();
 					invalidAmount = false;
 				}// end of  refInput if else statement
@@ -180,7 +180,7 @@ public class ServiceLoginImpl implements ServiceLogin  {
 					printAccountOptions();
 				} else {
 					System.out.println("Thanks for Banking with Us!!!");
-					LoginRequest refLoginRequest = new LoginRequest();
+					LoginRequest1 refLoginRequest = new LoginRequest1();
 					refLoginRequest.printHomePage();
 				}// end of  refInput if else statement
 					}//end of amount if else statement 
@@ -189,14 +189,14 @@ public class ServiceLoginImpl implements ServiceLogin  {
 		}//withdrawAmount
 		
 	@Override
-	public void verifyRegisteredEmail(UserAccount userInfo) { // method to verify register 
+	public void verifyRegisteredEmail(UserAccount1 userInfo) { // method to verify register 
 		boolean exist = false;
 		boolean exist1 = false;
 		System.out.print("Enter Email address : ");
 		String userID = sc.next();
 		
 			while(!exist) {
-				verifyAuth = new AuthenticationImpl();
+				verifyAuth = new AuthenticationImpl1();
 				if (userID.equals(userInfo.getUserEmail()) || userID.equals("xyz@gmail.com"))   {
 					System.out.println("email address already exist");
 					System.out.print("Enter Email address : ");
@@ -228,7 +228,7 @@ public class ServiceLoginImpl implements ServiceLogin  {
 				System.out.println("Password doesn't match");
 			}
 		}//end of while exist1
-		LoginRequest refLoginRequest = new LoginRequest();
+		LoginRequest1 refLoginRequest = new LoginRequest1();
 		refLoginRequest.printHomePage();
 		
 			}//end of verifyRegisteredEmail
